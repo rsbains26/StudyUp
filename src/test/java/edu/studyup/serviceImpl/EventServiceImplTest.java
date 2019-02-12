@@ -244,10 +244,11 @@ class EventServiceImplTest {
 	//Test 14
 	//The updateEventName should accept a name of length 20 but it returns an exception instead.
 	@Test
-	void testUpdateEventName_MaxLen_Bug() throws StudyUpException {
-		int eventID = 1;
-		eventServiceImpl.updateEventName(eventID, "This is the max len!");//20 char string
-		assertEquals("This is the max len!", DataStorage.eventData.get(eventID).getName());
+	void testUpdateEventName_MaxLen_Bug() {
+		Assertions.assertDoesNotThrow(() -> {
+			int eventID = 1;	
+			eventServiceImpl.updateEventName(eventID, "This is the max len!");//20 char string
+		  });
 	}
 	
 
