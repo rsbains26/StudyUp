@@ -14,7 +14,7 @@ import java.util.List;
  *
  */
 public class Event {
-
+	
 	private int eventID;
 	private String name;
 	private Location location;
